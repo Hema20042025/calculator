@@ -20,24 +20,37 @@ print("2.Subtraction")
 print("3.Multiplication");
 print("4.Division")
 print("5.Remainder")
-choice=eval(input("Enter the choice"));
-a=int(input("Enter the fisrt value:"));
-b=int(input("Enter the second value:"));
-if(choice==1):
-    c=sum(a,b);
-    print("The sum is", c);
-elif(choice==2):
-    c=sub(a,b)
-    print("The subtraction is",c);
-elif(choice==3):
-    c=mul(a,b)
-    print("The multiplication is",c);
-elif(choice==4):
-    c=div(a,b);
-    print("The division is",c);
-elif(choice==52):
-    c=rem(a,b);
+try:
+    choice = int(input("Enter the choice: "))
+    if choice not in [1, 2, 3, 4, 5]:
+        raise ValueError("Invalid choice! Please enter a number between 1 and 5.")
     
-    print("The remainder is", c);
-else:
-    print("INVALID INPUT")
+    a = int(input("Enter the first value: "))
+    b = int(input("Enter the second value: "))
+
+    if choice == 1:
+        result = sum(a, b)
+        print(f"The sum is {result}")
+    elif choice == 2:
+        result = sub(a, b)
+        print(f"The subtraction is {result}")
+    elif choice == 3:
+        result = mul(a, b)
+        print(f"The multiplication is {result}")
+    elif choice == 4:
+        if b == 0:
+            raise ValueError("Cannot divide by zero!")
+        result = div(a, b)
+        print(f"The division is {result}")
+    elif choice == 5:
+        result = rem(a, b)
+        print(f"The remainder is {result}")
+
+except ValueError as e:
+    print(f"Error: {e}")
+
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero!")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
