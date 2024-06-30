@@ -15,29 +15,29 @@ def div(a,b):
     return a/b;
 def rem(a,b):
     return a//b;
-print("1.addition");
-print("2.subtraction")
-print("3.multiplication");
-print("4.division")
-print("5.remainder")
-choice=eval(input("enter the choice"));
-a=int(input("enter the fisrt value:"));
-b=int(input("enter the second value:"));
+print("1.Addition");
+print("2.Subtraction")
+print("3.Multiplication");
+print("4.Division")
+print("5.Remainder")
+choice=eval(input("Enter the choice"));
+a=int(input("Enter the fisrt value:"));
+b=int(input("Enter the second value:"));
 if(choice==1):
     c=sum(a,b);
-    print("the sum is", c);
+    print("The sum is", c);
 elif(choice==2):
     c=sub(a,b)
-    print("the subtraction is",c);
+    print("The subtraction is",c);
 elif(choice==3):
     c=mul(a,b)
-    print("the multiplication is",c);
+    print("The multiplication is",c);
 elif(choice==4):
     c=div(a,b);
-    print("the division is",c);
+    print("The division is",c);
 elif(choice==52):
     c=rem(a,b);
     
-    print("teh remainder is", c);
+    print("The remainder is", c);
 else:
     print("INVALID INPUT")
